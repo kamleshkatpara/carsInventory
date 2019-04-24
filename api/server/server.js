@@ -40,5 +40,22 @@ boot(app, __dirname, function(err) {
 
   // start the server if `$ node server.js`
   if (require.main === module)
-    app.start();
+   // app.start();
+   app.io = require('socket.io')(app.start());
+
+   app.io.on('connection', function(socket){
+    console.log('a user connected');
+    socket.on('disconnect', function(){
+        console.log('user disconnected');
+    });
+
+    socket.on('modelSaved', function(modelSaved){
+      app.io.emit('modelSaved', modelSaved);
+    });
+
+    socket.on('modelUpdated', function(modelUpdated){
+      aap.io.emit('modelUpdated', modelUpdated);
+    });
+
+  });
 });
