@@ -1,0 +1,17 @@
+<h3 mat-dialog-title>Add Manufacturer
+  <mat-icon title='close' style='float:right; cursor: pointer;' (click)='onNoClick()'>close</mat-icon>
+</h3>
+<form #ManufacturersComponent (ngSubmit)="submit()" #formControl="ngForm">
+ 
+  <mat-form-field class="text-full-width">
+      <input matInput #input class='form-control' placeholder='Manufacturer Name' 
+      [(ngModel)]='manufacturer.manufacturer_name' name='manufacturer_name' required />
+      <input type="hidden" [(ngModel)]='manufacturer.created_at' name='created_at'  />
+  </mat-form-field>
+
+
+  <div mat-dialog-actions>
+      <button mat-raised-button color="primary" [type]="submit" [disabled]="!formControl.valid" [mat-dialog-close]="1">Save</button>
+      <button mat-raised-button color="warn" (click)="onNoClick()" tabindex="-1">Cancel</button>
+  </div>
+</form>

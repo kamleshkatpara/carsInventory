@@ -1,0 +1,42 @@
+.mat-card {
+    background: rgba(0, 0, 0, .06) !important;
+    color: rgba(0, 0, 0, .87);
+}
+
+.login-card {
+    width: 400px;
+    margin: 10% auto;
+}
+
+.login-full-width {
+    width: 100%;
+}
+
+mat-progress-bar.progressbar.mat-progress-bar.mat-warn {
+    margin-top: 0px;
+    margin-bottom: -10px;
+    margin-left: 100px;
+    top: -20px;
+    width: 75%;
+}
+
+.alert.alert-danger.ng-star-inserted {
+    margin-top: 10px;
+    text-align: center;
+    background: #607D8B;
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: -15px;
+    color: white;
+    font-weight: 300;
+}
+
+mat-icon.mat-icon.material-icons {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 786px) {
+    .login-full-width {
+        width: 100%;
+    }
+}

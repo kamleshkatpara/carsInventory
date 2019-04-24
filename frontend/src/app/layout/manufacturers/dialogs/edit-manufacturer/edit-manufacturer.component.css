@@ -1,0 +1,57 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    min-width: 450px;
+}
+
+.container>* {
+    width: 100%;
+}
+
+.form {
+    display: flex;
+    padding-top: 6px;
+}
+
+.mat-form-field {
+    font-size: 16px;
+    flex-grow: 1;
+}
+
+.text-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.text-full-width {
+    width: 100%;
+}
+
+.mat-raised-button {
+    min-width: 150px;
+}
+
+table {
+    width:100%;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+    font-size: 15px;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+   background-color: #fff;
+}
+table#t01 th {
+    background-color: #4caf50;
+    color: white;
+    font-size: 15px;
+}
+
+.cashback {
+    text-align: center;
+}

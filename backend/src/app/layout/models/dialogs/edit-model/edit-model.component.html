@@ -1,0 +1,112 @@
+<h2>Model: {{ model.id }}
+  <mat-icon title='close' style='float:right; cursor: pointer;' (click)='onNoClick()'>close</mat-icon>
+</h2>
+<form (ngSubmit)="submit()" role="form" #formControl="ngForm" enctype="multipart/form-data">
+
+  <table class="text-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field class="text-full-width">
+          <mat-select [(ngModel)]="model.manufacturer_id" name="manufacturer_id" placeholder="Select Manufacturer">
+            <mat-option *ngFor="let manufacturer of manufacturers" [value]="manufacturer.id">
+              {{ manufacturer.manufacturer_name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="text-full-width">
+          <input matInput #input class='form-control' placeholder='Model Name' [(ngModel)]='model.model_name'
+            name='model_name' required />
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <mat-grid-list cols='3' rowHeight='4em'>
+
+    <mat-grid-tile>
+      <mat-form-field class="text-full-width">
+        <input matInput #input class='form-control' placeholder='Model Color' [(ngModel)]='model.color' name='color'
+          required />
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-form-field class="text-full-width">
+        <input matInput #input class='form-control' placeholder='Manufacturer Year'
+          [(ngModel)]='model.manufacturing_year' name='manufacturing_year' required />
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-form-field class="text-full-width">
+        <input matInput #input class='form-control' placeholder='Registration Number'
+          [(ngModel)]='model.registration_number' name='registration_number' required />
+      </mat-form-field>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <mat-grid-list cols='2' rowHeight='4em'>
+
+      <mat-grid-tile>
+        <img src='{{model.first_image}}' />
+      </mat-grid-tile>
+  
+      <mat-grid-tile>
+        <img src='{{model.second_image}}' />
+  
+      </mat-grid-tile>
+  
+    </mat-grid-list>
+
+  <mat-grid-list cols='2' rowHeight='4em'>
+    <mat-grid-tile>
+
+
+      <div class='form'>
+        <button mat-stroked-button color="warn">
+          <input type="file" name="first_image" (change)="handleFirstImage($event.target.files)" class="ng-hide"
+            id="first_image" accept=".jpeg,.png,.jpg">
+          <input type="hidden">Change First Image</button>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+
+      <div class='form'>
+        <button mat-stroked-button color="warn">
+          <input type="file" name="second_image" (change)="handleSecondImage($event.target.files)" class="ng-hide"
+            id="second_image" accept=".jpeg,.png,.jpg">
+          <input type="hidden">Change Second Image</button>
+      </div>
+    </mat-grid-tile>
+
+
+  </mat-grid-list>
+
+
+  <table class="text-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field class="text-full-width">
+          <input matInput #input class='form-control' placeholder='Model Note' [(ngModel)]='model.note' name='note'
+            required />
+        </mat-form-field>
+      </td>
+
+      <td>
+        <mat-form-field class="text-full-width">
+          <input matInput #input class='form-control' placeholder='Model Count' [(ngModel)]='model.model_count'
+            name='model_count' required />
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <div mat-dialog-actions>
+    <button mat-raised-button color="primary" [type]="submit" [disabled]="!formControl.valid"
+      [mat-dialog-close]="1">Save</button>
+    <button mat-raised-button color="warn" (click)="onNoClick()" tabindex="-1">Cancel</button>
+  </div>
+</form>

@@ -1,0 +1,24 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="'side'">
+      <mat-nav-list>
+          <a mat-list-item routerLink="/manufacturers" routerLinkActive="active-link" (click)="drawer.toggle()" [routerLinkActiveOptions]="{exact: true}">Manufacturers</a>
+          <a mat-list-item routerLink="/models" routerLinkActive="active-link" (click)="drawer.toggle()" [routerLinkActiveOptions]="{exact: true}">Models</a>
+          <a mat-list-item routerLink="/vehicles" routerLinkActive="active-link" (click)="drawer.toggle()" [routerLinkActiveOptions]="{exact: true}">Vehicles</a>
+      </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+      <mat-toolbar color="primary">
+          <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+              <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+          </button>
+          <mat-toolbar class="onDesktop" color="primary">CarInventory</mat-toolbar>
+          <span class="onMobile">CarInventory</span>
+          <!-- This fills the remaining space of the current row -->
+          <span class="example-fill-remaining-space"></span>
+          <span>{{ currentUsername | titlecase }}</span>
+          <span>&nbsp;&nbsp;&nbsp;</span>
+          <mat-icon (click)=" logout()" title="logout" class="example-icon">exit_to_app</mat-icon>
+      </mat-toolbar>
+      <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

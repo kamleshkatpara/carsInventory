@@ -1,0 +1,46 @@
+{
+  "name": "models",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "model_name": {
+      "type": "string"
+    },
+    "manufacturer_id": {
+      "type": "number"
+    },
+    "color": {
+      "type": "string"
+    },
+    "manufacturing_year": {
+      "type": "string"
+    },
+    "registration_number": {
+      "type": "string"
+    },
+    "note": {
+      "type": "string"
+    },
+    "first_image": {
+      "type": "string"
+    },
+    "second_image": {
+      "type": "string"
+    },
+    "model_count": {
+      "type": "number"
+    },
+    "created_at": {
+      "type": "date"
+    },
+    "updated_at": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "acls": [],
+  "methods": {}
+}

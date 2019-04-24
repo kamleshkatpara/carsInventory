@@ -1,0 +1,10 @@
+<div class="container">
+  <div mat-dialog-content style="text-align:center">
+      <p>Delete {{manufacturer.manufacturer_name}} ?</p>
+  </div>
+
+  <div mat-dialog-actions>
+      <button mat-raised-button color="warn" [mat-dialog-close]="1" (click)="confirmDelete()">Delete</button>
+      <button mat-raised-button color="accent" (click)="onNoClick()" tabindex="-1">Cancel</button>
+  </div>
+</div>

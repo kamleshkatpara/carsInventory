@@ -1,0 +1,81 @@
+.sidenav-container {
+    height: 100%;
+}
+
+.mat-nav-list .mat-list-item {
+    cursor: pointer;
+    outline: 0;
+    border: 1px solid #ccc;
+    border-style: dashed;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+}
+
+a.mat-list-item.active-link {
+    background-color: orange;
+    color: white;
+}
+
+.mat-nav-list .mat-list-item:hover {
+    background: gray;
+    color: white !important;
+}
+
+span.onMobile {
+    display: none;
+}
+
+.partnersCount {
+    background-color: red;
+    width: 20px;
+    text-align: center;
+    border-radius: 20px;
+    animation: blinkingpartnersCount 1.10s infinite;
+}
+
+@keyframes blinkingpartnersCount {
+    0% {
+        color: #FFFFFF;
+    }
+    49% {
+        color: transparent;
+    }
+    50% {
+        color: transparent;
+    }
+    99% {
+        color: transparent;
+    }
+    100% {
+        color: #FFFFFF;
+    }
+}
+
+@media screen and (max-width: 786px) {
+    span.onMobile {
+        display: block;
+        margin-left: 0;
+        color: white;
+    }
+
+    .onDesktop {
+        display: none;
+    }
+}
+
+.example-fill-remaining-space {
+    /* This fills the remaining space, by using flexbox.
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+}
+
+mat-icon.example-icon.mat-icon.material-icons:hover {
+    background-color: black;
+    cursor: pointer;
+}
